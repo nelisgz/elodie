@@ -589,6 +589,8 @@ class FileSystem(object):
             # Set the utime based on what the original file contained 
             #  before we made any changes.
             # Then set the utime on the destination file based on metadata.
+            print(_file)
+            print(stat_info_original)
             os.utime(_file, (stat_info_original.st_atime, stat_info_original.st_mtime))
             self.set_utime_from_metadata(metadata, dest_path)
 
